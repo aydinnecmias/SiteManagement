@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Entities", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.DataAcces", "SiteManagement.DataAcces\SiteManagement.DataAcces.csproj", "{1C3B1B36-24EF-4CBB-958D-5EE1D5571CFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Business", "SiteManagement.Business\SiteManagement.Business.csproj", "{1CA9DF47-3F16-4D0F-8CBD-7E10A27B3CC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1C3B1B36-24EF-4CBB-958D-5EE1D5571CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3B1B36-24EF-4CBB-958D-5EE1D5571CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3B1B36-24EF-4CBB-958D-5EE1D5571CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA9DF47-3F16-4D0F-8CBD-7E10A27B3CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA9DF47-3F16-4D0F-8CBD-7E10A27B3CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA9DF47-3F16-4D0F-8CBD-7E10A27B3CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA9DF47-3F16-4D0F-8CBD-7E10A27B3CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
