@@ -51,6 +51,7 @@ namespace Site.Concrete
             using (var siteDbContext = new SiteDbContext())
             {
                 siteDbContext.Residents.Update(resident);
+                siteDbContext.SaveChanges();
                 return resident;
             }
 

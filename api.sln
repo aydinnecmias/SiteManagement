@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{7565A06A-482A-433F-B04F-BD466CDEC857}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.API", "api\SiteManagement.API.csproj", "{7565A06A-482A-433F-B04F-BD466CDEC857}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Entities", "SiteManagement.Entities\SiteManagement.Entities.csproj", "{3F3330A5-5C02-444F-8EC9-CD8BFCF2A607}"
 EndProject
