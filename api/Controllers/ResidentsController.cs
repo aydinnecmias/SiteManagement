@@ -12,9 +12,9 @@ namespace SiteManagement.API.Controllers
     public class ResidentsController : ControllerBase
     {
         private IResidentService _residentService;
-        public ResidentsController()
+        public ResidentsController(IResidentService residentService)
         {
-            _residentService = new ResidentManager();
+            _residentService = residentService;
         }
 
         [HttpGet]

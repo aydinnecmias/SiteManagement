@@ -13,9 +13,9 @@ namespace SiteManagement.Business.Concrete
     public class ResidentManager : IResidentService
     {
         private IResidentRepository _residentRepository;
-        public ResidentManager()
+        public ResidentManager(IResidentRepository residentRepository)
         {
-            _residentRepository = new ResidentRepository();
+            _residentRepository = residentRepository;
         }
         public Resident CreateResident(Resident resident)
         {

@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Site.Abstract;
+using Site.Concrete;
+using SiteManagement.Business.Abstract;
+using SiteManagement.Business.Concrete;
 
 namespace api
 {
@@ -21,6 +24,8 @@ namespace api
         {
             services.AddSwaggerGen();
             services.AddControllers();
+            services.AddSingleton<IResidentService, ResidentManager>();
+            services.AddSingleton<IResidentRepository, ResidentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SiteManagement.Entities
 {
     public class Resident
     {
-        [Key]
+        [Key,DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [StringLength(100)]
@@ -15,5 +16,6 @@ namespace SiteManagement.Entities
         public string Password { get; set; }
         public string Phone { get; set; }
         public string PlateNo { get; set; }
+        public int ApartmentId { get; set; }
     }
 }

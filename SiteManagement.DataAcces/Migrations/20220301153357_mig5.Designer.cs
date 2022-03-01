@@ -9,8 +9,8 @@ using SiteManagement.DataAcces;
 namespace SiteManagement.DataAcces.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    [Migration("20220228181025_initialCreate")]
-    partial class initialCreate
+    [Migration("20220301153357_mig5")]
+    partial class mig5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,9 @@ namespace SiteManagement.DataAcces.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ApartmentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
