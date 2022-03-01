@@ -26,6 +26,7 @@ namespace api
             services.AddControllers();
             services.AddSingleton<IResidentService, ResidentManager>();
             services.AddSingleton<IResidentRepository, ResidentRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

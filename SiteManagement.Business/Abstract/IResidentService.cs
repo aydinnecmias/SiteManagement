@@ -12,6 +12,7 @@ namespace SiteManagement.Business.Abstract
         List<Resident> GetAllResidents();
 
         Resident GetResidentById(int id);
+        Resident GetResidentByName(string name);
 
         Resident CreateResident(Resident resident);
 

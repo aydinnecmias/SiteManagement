@@ -43,6 +43,16 @@ namespace SiteManagement.Business.Concrete
             
         }
 
+        public Resident GetResidentByName(string name)
+        {
+            if (name != null)
+            {
+                return _residentRepository.GetResidentByName(name);
+
+            }
+            throw new Exception("Name can not be null");
+        }
+
         public Resident UpdateResident(Resident resident)
         {
             return _residentRepository.UpdateResident(resident);

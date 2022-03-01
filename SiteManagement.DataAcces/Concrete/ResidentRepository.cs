@@ -56,5 +56,13 @@ namespace Site.Concrete
             }
 
         }
+
+        public Resident GetResidentByName(string name)
+        {
+            using (var siteDbContext = new SiteDbContext())
+            {
+                return siteDbContext.Residents.FirstOrDefault(x => x.FullName.ToLower() == name.ToLower());
+            }
+        }
     }
 }
