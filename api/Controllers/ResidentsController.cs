@@ -18,33 +18,49 @@ namespace SiteManagement.API.Controllers
         }
 
         [HttpGet]
-        public List<Resident> Get()
+        public IActionResult Get()
         {
-            return _residentService.GetAllResidents();
+            var residents = _residentService.GetAllResidents();
+            return Ok(residents);
         }
 
         [HttpGet("{id}")]
-        public Resident Get(int id)
+        public IActionResult Get(int id)
         {
-            return _residentService.GetResidentById(id);
+            var resident = _residentService.GetResidentById(id);
+            if (resident != null)
+            {
+                return Ok(resident);
+            }
+            return NotFound(); 
         }
 
         [HttpPost]
-        public Resident Create([FromBody] Resident resident)
-        {
-            return _residentService.CreateResident(resident);
+        public IActionResult Post([FromBody] Resident resident)
+        {   var createdResident = _residentService.CreateResident(resident);
+            return CreatedAtAction("Get",new {id = createdResident.Id},createdResident); // 201 + created resident.
         }
 
         [HttpPut]
-        public Resident Update([FromBody] Resident resident)
+        public IActionResult Update([FromBody] Resident resident)
         {
-            return _residentService.CreateResident(resident);
+            if(_residentService.GetResidentById(resident.Id)!=null)
+            {
+                return Ok(_residentService.UpdateResident(resident)); // 200 + resident data
+            }
+            return NotFound();
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-             _residentService.DeleteResident(id);
+            if (_residentService.GetResidentById(id) != null)
+            {
+                _residentService.DeleteResident(id); 
+                return Ok(); // 200 + resident data
+            }
+            return NotFound();
+            
         }
     }
 }
