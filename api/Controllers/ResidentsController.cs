@@ -18,14 +18,16 @@ namespace SiteManagement.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        [Route("GetAllResident}")]
+        public IActionResult GetAllResidents()
         {
             var residents = _residentService.GetAllResidents();
             return Ok(residents);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet]
+        [Route("GetResidentById/{id}")]
+        public IActionResult GetResidentById(int id)
         {
             var resident = _residentService.GetResidentById(id);
             if (resident != null)
@@ -36,13 +38,15 @@ namespace SiteManagement.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Resident resident)
+        [Route("PostResidentById/{id}")]
+        public IActionResult PostResidentById([FromBody] Resident resident)
         {   var createdResident = _residentService.CreateResident(resident);
             return CreatedAtAction("Get",new {id = createdResident.Id},createdResident); // 201 + created resident.
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Resident resident)
+        [Route("UpdateResidentById/{id}")]
+        public IActionResult UpdateResidentById([FromBody] Resident resident)
         {
             if(_residentService.GetResidentById(resident.Id)!=null)
             {
@@ -51,8 +55,9 @@ namespace SiteManagement.API.Controllers
             return NotFound();
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete]
+        [Route("DeleteResidentById/{id}")]
+        public IActionResult DeleteResidentById(int id)
         {
             if (_residentService.GetResidentById(id) != null)
             {
