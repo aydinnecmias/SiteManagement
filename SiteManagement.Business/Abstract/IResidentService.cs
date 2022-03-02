@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace SiteManagement.Business.Abstract
 {
-   public interface IResidentService
+    public interface IResidentService
     {
         List<Resident> GetAllResidents();
-
         Resident GetResidentById(int id);
         Resident GetResidentByName(string name);
-
         Resident CreateResident(Resident resident);
-
         Resident UpdateResident(Resident resident);
-
         void DeleteResident(int id);
     }
 }
